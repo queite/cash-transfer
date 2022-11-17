@@ -3,6 +3,7 @@ import express from 'express';
 import 'express-async-errors';
 import errorMiddleware from './middlewares/errorMiddleware';
 import balanceRoute from './routers/balanceRoute';
+import transactionRoute from './routers/transactionRoute';
 import userRoute from './routers/userRoute';
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(cors());
 
 app.use('/login', userRoute);
 app.use('/balance', balanceRoute);
+app.use('/transaction', transactionRoute);
 
 app.use(errorMiddleware);
 export default app;

@@ -41,8 +41,7 @@ Transaction.init({
   updatedAt: false,
 });
 
-Account.hasMany(Transaction);
-Transaction.belongsTo(Account, { as: 'debitedAccountId', foreignKey: 'debitedAccountId' });
-Transaction.belongsTo(Account, { as: 'creditedAccountId', foreignKey: 'creditedAccountId' });
+Transaction.belongsTo(Account, { foreignKey: 'debitedAccountId' });
+Transaction.belongsTo(Account, { foreignKey: 'creditedAccountId' });
 
 export default Transaction;

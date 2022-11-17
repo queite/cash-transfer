@@ -3,7 +3,7 @@ import Account from '../database/models/Account';
 import sequelize from '../database/models/index';
 import User from '../database/models/User';
 import HttpException from '../errors/httpException';
-import { ILogin, LoginZodSchema } from '../interfaces/IUser';
+import { ILogin, IUserData, LoginZodSchema } from '../interfaces/IUser';
 import JwtService from './JwtService';
 
 export default class UserService {
@@ -20,6 +20,13 @@ export default class UserService {
       return JwtService.sign(userData);
     });
     return result;
+  }
+
+  static async getUserData(username: string): Promise<IUserData> {
+    const user = await User.findOne({ where: { username } });
+    if (!user) throw new HttpException(404, 'User not found');
+    const { password, ...userData } = user.dataValues;
+    return userData;
   }
 
   static async login(login: ILogin): Promise<string | null> {
