@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use('/login', userRoute);
 app.use('/balance', balanceRoute);
-app.use('/transaction', transactionRoute);
+app.use('/transactions', transactionRoute);
 
 app.use(errorMiddleware);
 export default app;

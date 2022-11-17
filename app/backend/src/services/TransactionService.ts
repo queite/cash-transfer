@@ -1,3 +1,4 @@
+import { Op } from 'sequelize';
 import Account from '../database/models/Account';
 import sequelize from '../database/models/index';
 import Transaction from '../database/models/Transaction';
@@ -46,5 +47,30 @@ export default class TransactionService {
         value,
       }, { transaction: t });
     });
+  }
+
+  static async getTransactions(id: number): Promise<Transaction[]> {
+    const transactions = await Transaction.findAll({ where: {
+      [Op.or]: [
+        { debitedAccountId: id },
+        { creditedAccountId: id },
+      ],
+    } });
+    return transactions;
+  }
+
+  static async getTransactionByDate(date: Date): Promise<Transaction[]> {
+    const transactions = await Transaction.findAll({ where: { createdAt: date } });
+    return transactions;
+  }
+
+  static async getTransactionByCashOut(id: number): Promise<Transaction[]> {
+    const transactions = await Transaction.findAll({ where: { debitedAccountId: id } });
+    return transactions;
+  }
+
+  static async getTransactionByCashIn(id: number): Promise<Transaction[]> {
+    const transactions = await Transaction.findAll({ where: { creditedAccountId: id } });
+    return transactions;
   }
 }

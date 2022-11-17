@@ -15,4 +15,10 @@ export default class TransactionController {
     await this.transactionService.transfer(transactionData);
     return res.status(201).send();
   }
+
+  async getTransactions(req: Request, res: Response) {
+    if (!req.user) throw new HttpException(401, 'Unauthorized user');
+    const transactions = await this.transactionService.getTransactions(req.user.id);
+    return res.status(200).json(transactions);
+  }
 }

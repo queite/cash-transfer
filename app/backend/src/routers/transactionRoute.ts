@@ -8,5 +8,6 @@ const router = Router();
 const transactionController = new TransactionController(TransactionService);
 
 router.post('/', authnMiddleware, (req, res) => transactionController.transfer(req, res));
+router.get('/', authnMiddleware, (req, res) => transactionController.getTransactions(req, res));
 
 export default router;
