@@ -1,5 +1,24 @@
 version: '3.9'
 services:
+  backend:
+    container_name: app_backend
+    build: ./backend
+    ports:
+      - 3001:3001
+    platform: linux/x86_64
+    working_dir: /app-backend
+    command: sh -c "npm run db:reset && npm start"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - APP_PORT=3001
+      - JWT_SECRET=jwt_secret
+      - DB_USER=postgres
+      - DB_PASS=example
+      - DB_HOST=db
+      - DB_PORT=5432
+
   db:
     image: postgres
     container_name: postgres-db
