@@ -13,6 +13,7 @@ export default class TransactionService {
     const creditedUser = await UserService.getUserData(creditedUsername);
     const creditedAccount = await BalanceService.getBalance(creditedUser.accountId);
     const debitedAccount = await BalanceService.getBalance(debitedUserId);
+
     if (!creditedAccount || !debitedAccount) {
       throw new HttpException(404, 'Debit or credit account not found');
     }
@@ -20,6 +21,7 @@ export default class TransactionService {
       throw new HttpException(422, 'Debit account must be different from credit account');
     }
     if (debitedAccount.balance < value) throw new HttpException(422, 'Insufficient balance');
+
     return {
       debitedAccountId: debitedAccount.id,
       newDebitedAccountBalance: Number(debitedAccount.balance) - Number(value),
@@ -32,6 +34,7 @@ export default class TransactionService {
   static async transfer(transactionData: ITransactionData): Promise<void> {
     const transferData = await this.validateTransfer(transactionData);
     const { debitedAccountId, creditedAccountId, value } = transferData;
+
     await sequelize.transaction(async (t) => {
       await Account.update(
         { balance: transferData.newDebitedAccountBalance },
@@ -59,17 +62,28 @@ export default class TransactionService {
     return transactions;
   }
 
-  static async getTransactionByDate(date: Date): Promise<Transaction[]> {
-    const transactions = await Transaction.findAll({ where: { createdAt: date } });
+  static async getTransactionByDate(date: string, id: number): Promise<Transaction[]> {
+    const toDate = date.split('/');
+    const formatedDate = [toDate[2], toDate[1], toDate[0]].join('-');
+
+    const transactions = await Transaction.findAll({ where: {
+      [Op.and]: [
+        { createdAt: {
+          [Op.between]: [`${formatedDate}T00:00:00.400Z`, `${formatedDate}T23:59:59.400Z`] } },
+        { [Op.or]: [
+          { debitedAccountId: id },
+          { creditedAccountId: id },
+        ] }],
+    } });
     return transactions;
   }
 
-  static async getTransactionByCashOut(id: number): Promise<Transaction[]> {
+  static async getCashOutTransactions(id: number): Promise<Transaction[]> {
     const transactions = await Transaction.findAll({ where: { debitedAccountId: id } });
     return transactions;
   }
 
-  static async getTransactionByCashIn(id: number): Promise<Transaction[]> {
+  static async getCashInTransactions(id: number): Promise<Transaction[]> {
     const transactions = await Transaction.findAll({ where: { creditedAccountId: id } });
     return transactions;
   }
