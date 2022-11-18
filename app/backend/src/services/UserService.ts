@@ -9,6 +9,8 @@ import JwtService from './JwtService';
 export default class UserService {
   static async create(login: ILogin): Promise<string | null> {
     LoginZodSchema.parse(login);
+    const existentUser = await User.findOne({ where: { username: login.username } });
+    if (existentUser) throw new HttpException(400, 'User already registered');
     const result = await sequelize.transaction(async (t) => {
       const account = await Account.create({}, { transaction: t });
       const user = await User.create({
