@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use('/login', userRoute);
+app.use('/users', userRoute);
 app.use('/balance', balanceRoute);
 app.use('/transactions', transactionRoute);
 

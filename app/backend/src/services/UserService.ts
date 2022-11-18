@@ -30,11 +30,9 @@ export default class UserService {
   }
 
   static async login(login: ILogin): Promise<string | null> {
+    LoginZodSchema.parse(login);
     const user = await User.findOne({ where: { username: login.username } });
-    if (!user) {
-      const newUserToken = await this.create(login);
-      return newUserToken;
-    }
+    if (!user) throw new HttpException(404, 'User not found');
     const checkPassword = compareSync(login.password, user.password);
     if (!checkPassword) throw new HttpException(401, 'Incorrect username or password');
     const { password, ...userData } = user.dataValues;

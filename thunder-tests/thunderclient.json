@@ -4,16 +4,16 @@
     "colId": "b3ca0377-ba3e-4bb5-80bf-4b1e88f519f6",
     "containerId": "",
     "name": "login",
-    "url": "http://localhost:3001/login",
+    "url": "http://localhost:3001/users/login",
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-11-15T16:50:00.899Z",
-    "modified": "2022-11-17T01:35:16.996Z",
+    "modified": "2022-11-18T10:59:31.817Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"username\": \"outro2\",\n  \"password\": \"12T45678\"\n}",
+      "raw": "{\n  \"username\": \"outr\",\n  \"password\": \"12T45678\"\n}",
       "form": []
     },
     "tests": []
@@ -46,7 +46,7 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-11-16T21:27:33.091Z",
-    "modified": "2022-11-17T13:02:59.618Z",
+    "modified": "2022-11-17T18:04:27.213Z",
     "headers": [
       {
         "name": "Authorization",
@@ -56,7 +56,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n      \"username\": \"outro\",\n      \"value\":10\n}",
+      "raw": "{\n      \"username\": \"outro2\",\n      \"value\":10\n}",
       "form": []
     },
     "tests": []
@@ -121,6 +121,25 @@
       }
     ],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "e68b4e49-aff6-4c3f-890a-48a9edfec7c8",
+    "colId": "b3ca0377-ba3e-4bb5-80bf-4b1e88f519f6",
+    "containerId": "",
+    "name": "createUser",
+    "url": "http://localhost:3001/users/create",
+    "method": "POST",
+    "sortNum": 70000,
+    "created": "2022-11-18T11:01:14.188Z",
+    "modified": "2022-11-18T11:02:02.769Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"username\": \"teste\",\n  \"password\": \"12345Qz\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
