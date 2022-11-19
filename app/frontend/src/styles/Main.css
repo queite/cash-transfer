@@ -1,0 +1,48 @@
+.main-content-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.transfer-container {
+  align-items: center;
+  display: flex;
+}
+
+.transfer-container h2 {
+  font-weight: 700;
+  font-size: 2rem!important;
+  text-transform: uppercase!important;
+  margin-bottom: 12px;
+}
+
+.transfer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.transfer-container input, label {
+  align-self:flex-end;
+  border-radius: 12px;
+  padding: 4px;
+  font-size: larger;
+  margin-left: 12px;
+}
+
+.transfer-container button {
+  align-self: center;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: larger;
+  width: fit-content;
+  margin: 12px;
+  background-color: #7431f4;
+  color: #fff;
+}
+
+.transction-container {
+  border-radius: 12px;
+}
+
+.table-container {
+    border-radius: 12px;
+}

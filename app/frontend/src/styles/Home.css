@@ -1,0 +1,25 @@
+.home-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 4px rgb(102, 101, 101) dashed ;
+}
+
+.home-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase!important;
+  margin-bottom: 12px;
+}
+
+.access-container {
+  margin: 8%;
+}
+
+.access-container
+
+.registration-container {
+  margin: 8%;
+}

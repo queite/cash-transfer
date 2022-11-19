@@ -1,0 +1,63 @@
+.table {
+  display: flex;
+  padding: 1%;
+  background-color: #fff;
+  width: fit-content;
+}
+
+svg {
+  color: #000;
+  font-size: 2rem;
+  margin: 5px;
+}
+
+svg:hover {
+  animation: lightsOn 1s infinite alternate;
+  cursor: pointer;
+}
+
+.table table {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #000;
+  display: block;
+  font-size: 0.8rem;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.table table thead {
+  color: #fff;
+  background-color: #7431f4;
+}
+
+.table table td , th {
+  border-left: 2px solid #595c62;
+  padding: 1em;
+}
+
+.table table td:first-of-type {
+  border-left: none;
+}
+
+.table table th:first-of-type {
+  border-left: none;
+}
+
+.table table .top td , .table table .dados:last-of-type td {
+  border-bottom: 2px solid #595c62;
+}
+
+@keyframes lightsOn {
+
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}

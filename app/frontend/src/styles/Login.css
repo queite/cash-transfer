@@ -1,29 +1,32 @@
 .login-container {
   align-items: center;
-  background-color: rgb(76, 85, 92);
+  background-color: #000;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 50vw;
-  padding: 5%;
+  max-width: fit-content;
+  padding: 42px 82px;
+  font-size: larger;
 }
 
 .login-container label {
+  align-self: center;
   display: flex;
   flex-direction: column;
   font-size: larger;
-  margin: 1%;
+  color: #fff;
 }
 
 .login-container button {
-  background-color: rgb(27, 198, 180);
+  background-color: #ff00ff;
   border: none;
   border-radius: 10px;
-  color: rgb(32, 37, 41);
+  color: #000;
   font-size: larger;
-  margin-top: 2%;
-  padding: 2% 4%;
+  font-weight: 700;
+  margin-top: 22px;
+  padding: 4% 8%;
 }
 
 .login-container button:hover {

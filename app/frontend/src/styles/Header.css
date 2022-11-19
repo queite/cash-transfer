@@ -7,6 +7,11 @@ header {
   background-color: black;
   color: #fff;
   margin-bottom: 22px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase!important;
+  margin-bottom: 12px;
 }
 
 header span {
