@@ -5,7 +5,6 @@ import '../styles/TransactionsTable.css';
 
 function TransactionsTable() {
   const {transactions}: any = useContext(Context);
-  console.log(transactions)
 
   return(
     <section className="table">

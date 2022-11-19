@@ -37,3 +37,9 @@
   background-color: #7431f4;
   color: #fff;
 }
+
+.table-container {
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
