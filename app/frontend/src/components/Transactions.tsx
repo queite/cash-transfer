@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import Context from '../context/context';
+import api from '../services/requests';
 import '../styles/Transactions.css';
 import TransactionsTable from "./TransactionsTable";
 
 function Transactions() {
-  const [data, setData] = useState('');
-  const [filter, setFilter] = useState('')
+  const {setTransactions}: any = useContext(Context);
 
-  const handleFilter = () => {
-    console.log(data)
-    console.log(filter)
+  const handleDataFilter = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const filteredTransactions = await api.get(`/transactions/search?q=${e.target.value}`, {'headers': {'Authorization': localStorage.token}});
+    setTransactions(filteredTransactions.data)
   }
 
   return(
@@ -19,29 +20,28 @@ function Transactions() {
             <input
               type='Date'
               placeholder="dd/mm/aaaa"
-              onChange={(e) => setData(e.target.value)}
+              onChange={handleDataFilter}
             />
           </label>
           <input
             type="radio"
             value="cashin"
             name="filter"
-            onChange={(e) => setFilter(e.target.value)}
+            onChange={handleDataFilter}
           /> Entradas
           <input
             type="radio"
             value="cashout"
             name="filter"
-            onChange={(e) => setFilter(e.target.value)}
+            onChange={handleDataFilter}
           /> Saídas
           <input
             type="radio"
             value="all"
             name="filter"
-            onChange={(e) => setFilter(e.target.value)}
+            onChange={handleDataFilter}
           /> Todos
         </div>
-        <button onClick={handleFilter}>Filtrar</button>
       </div>
       <div className='table-container'>
         <TransactionsTable />

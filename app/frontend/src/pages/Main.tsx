@@ -6,11 +6,11 @@ import Context from "../context/context";
 import '../styles/Main.css';
 
 function Main() {
-  const {userData, balance}: any = useContext(Context);
+  const {userData, balance, transactions}: any = useContext(Context);
 
   return(
     <div>
-      {userData && balance ?
+      {userData && balance && transactions?
       <>
         <Header/>
         <div className="main-content-container">

@@ -28,8 +28,8 @@ function Login(props: LoginProps) {
     const userTransactions = await api.get('/transactions', {'headers': {
         'Authorization': localStorage.token
       }})
-    setTransactions(userTransactions.data)
-    localStorage.transactions = userTransactions.data;
+    setTransactions(userTransactions.data);
+    localStorage.transactions = JSON.stringify(userTransactions.data);
     const balance = await api.get('/balance', {'headers': {
         'Authorization': localStorage.token
       }})

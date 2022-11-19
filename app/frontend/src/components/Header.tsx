@@ -5,9 +5,7 @@ import Context from '../context/context';
 import '../styles/Header.css';
 
 function Header() {
-  const {setUserData, setBalance, setTransactions}: any = useContext(Context);
-  const userData = JSON.parse(localStorage.user);
-  const balance = JSON.parse(localStorage.balance);
+  const {userData, balance, setUserData, setBalance, setTransactions}: any = useContext(Context);
   const navigate = useNavigate();
 
   const handleLogOut = () => {
