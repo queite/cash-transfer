@@ -1,19 +1,27 @@
 import { useContext } from "react";
 import Header from "../components/Header";
+import Transactions from "../components/Transactions";
 import Transfer from "../components/Transfer";
 import Context from "../context/context";
+import '../styles/Main.css';
 
 function Main() {
   const {userData, balance}: any = useContext(Context);
 
   return(
     <div>
-      {userData && balance
-      ? <>
-      <Header/>
-      <Transfer /></>
+      {userData && balance ?
+      <>
+        <Header/>
+        <div className="main-content-container">
+          <div className="transfer-container">
+            <h2>Faça sua transferência</h2>
+            <Transfer />
+          </div>
+          <Transactions />
+        </div>
+      </>
       : <span>Loading...</span>}
-
     </div>
   )
 }

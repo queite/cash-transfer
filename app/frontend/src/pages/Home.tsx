@@ -1,4 +1,5 @@
 import Login from '../components/Login';
+import '../styles/Home.css';
 
 function App() {
   return (
@@ -9,11 +10,16 @@ function App() {
           Bem-vindo a N.G Cash
           </p>
         </header>
-        <div>
-          <h3>Acessar minha conta</h3>
-          <Login login/>
-          <h3>Criar conta</h3>
-          <Login />
+        <div className='home-container'>
+          <div className='access-container'>
+            <h2>Acessar minha conta</h2>
+            <Login login/>
+          </div>
+          <div className='registration-container'>
+            <h2>Criar conta</h2>
+            <Login />
+          </div>
+
         </div>
       </div>
 

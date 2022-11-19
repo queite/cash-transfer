@@ -9,7 +9,7 @@ type Props = {
 const Provider = ({children}: Props) => {
   const [userData, setUserData] = useState<IUserData>()
   const [token, setToken] = useState<string>()
-  const [transactions, setTransactions] = useState<ITransactions[]>([])
+  const [transactions, setTransactions] = useState<ITransactions[]>()
   const [balance, setBalance] = useState<IBalance>()
 
   const data = {

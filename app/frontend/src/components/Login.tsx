@@ -55,12 +55,18 @@ function Login(props: LoginProps) {
   return(
     <div className="login-container">
       <label> Nome de usuário
-        <input name='username' type="text" placeholder="usuário"
-        value={login.username}
-        onChange={(e) => setLogin({ username: e.target.value, password: login.password })}/>
+        <input
+          name='username'
+          type="text"
+          placeholder="usuário"
+          value={login.username}
+          onChange={(e) => setLogin({ username: e.target.value, password: login.password })}/>
       </label>
         <label> Senha
-        <input name='password' type="password" placeholder="sua senha aqui"
+        <input
+          name='password'
+          type="password"
+          placeholder="sua senha aqui"
           value={login.password}
           onChange={(e) => setLogin({ username: login.username, password: e.target.value })}/>
       </label>

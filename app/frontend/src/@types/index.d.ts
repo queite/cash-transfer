@@ -15,5 +15,9 @@ export interface ITransactions {
     creditedAccountId: number
     value: number
     createdAt: string
+}
 
+export interface IDataTransfer {
+  username: string
+  value: number
 }
