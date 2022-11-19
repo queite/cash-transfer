@@ -14,13 +14,13 @@ export default class TransactionService {
     const creditedAccount = await BalanceService.getBalance(creditedUser.accountId);
     const debitedAccount = await BalanceService.getBalance(debitedUserId);
 
-    if (!creditedAccount || !debitedAccount) {
-      throw new HttpException(404, 'Debit or credit account not found');
-    }
+    if (!creditedAccount || !debitedAccount) throw new HttpException(404, 'Account not found');
     if (debitedAccount.id === creditedAccount.id) {
       throw new HttpException(422, 'Debit account must be different from credit account');
     }
-    if (debitedAccount.balance < value) throw new HttpException(422, 'Insufficient balance');
+    if (debitedAccount.balance < value || value <= 0) {
+      throw new HttpException(422, 'Insufficient balance');
+    }
 
     return {
       debitedAccountId: debitedAccount.id,
