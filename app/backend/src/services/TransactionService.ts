@@ -63,13 +63,10 @@ export default class TransactionService {
   }
 
   static async getTransactionByDate(date: string, id: number): Promise<Transaction[]> {
-    const toDate = date.split('/');
-    const formatedDate = [toDate[2], toDate[1], toDate[0]].join('-');
-
     const transactions = await Transaction.findAll({ where: {
       [Op.and]: [
         { createdAt: {
-          [Op.between]: [`${formatedDate}T00:00:00.400Z`, `${formatedDate}T23:59:59.400Z`] } },
+          [Op.between]: [`${date}T00:00:00.400Z`, `${date}T23:59:59.400Z`] } },
         { [Op.or]: [
           { debitedAccountId: id },
           { creditedAccountId: id },

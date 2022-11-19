@@ -81,49 +81,6 @@
     "tests": []
   },
   {
-    "_id": "35870010-3b55-489f-a39b-b02002ed1780",
-    "colId": "b3ca0377-ba3e-4bb5-80bf-4b1e88f519f6",
-    "containerId": "",
-    "name": "filterByDate",
-    "url": "http://localhost:3001/transactions/date",
-    "method": "GET",
-    "sortNum": 50000,
-    "created": "2022-11-17T11:54:06.905Z",
-    "modified": "2022-11-17T13:03:17.589Z",
-    "headers": [
-      {
-        "name": "Authorization",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJvdXRybzIiLCJhY2NvdW50SWQiOjIsImlhdCI6MTY2ODY4NjM1MiwiZXhwIjoxNjY4NzcyNzUyfQ.rkXwAhV5HBcPnuc5Voxux641WAfxj2m85lqt9vajBXE"
-      }
-    ],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"date\": \"17/11/2022\"\n}",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "8d2f8779-f461-4364-9cf7-1b5c1c115a41",
-    "colId": "b3ca0377-ba3e-4bb5-80bf-4b1e88f519f6",
-    "containerId": "",
-    "name": "getCashInTransactions",
-    "url": "http://localhost:3001/transactions/cashout",
-    "method": "GET",
-    "sortNum": 60000,
-    "created": "2022-11-17T13:08:45.351Z",
-    "modified": "2022-11-17T13:10:53.499Z",
-    "headers": [
-      {
-        "name": "Authorization",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJvdXRybzIiLCJhY2NvdW50SWQiOjIsImlhdCI6MTY2ODY4NjM1MiwiZXhwIjoxNjY4NzcyNzUyfQ.rkXwAhV5HBcPnuc5Voxux641WAfxj2m85lqt9vajBXE"
-      }
-    ],
-    "params": [],
-    "tests": []
-  },
-  {
     "_id": "e68b4e49-aff6-4c3f-890a-48a9edfec7c8",
     "colId": "b3ca0377-ba3e-4bb5-80bf-4b1e88f519f6",
     "containerId": "",
@@ -159,6 +116,31 @@
       }
     ],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "f7feef97-2311-4567-bb25-3d97f6dc9af1",
+    "colId": "b3ca0377-ba3e-4bb5-80bf-4b1e88f519f6",
+    "containerId": "",
+    "name": "search",
+    "url": "http://localhost:3001/transactions/search?q=cashin",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2022-11-19T14:10:45.596Z",
+    "modified": "2022-11-19T14:49:50.783Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJ0ZXN0ZSIsImFjY291bnRJZCI6NCwiaWF0IjoxNjY4ODY3MDg2LCJleHAiOjE2Njg5NTM0ODZ9.gzaWewIvl-_2dzxUBZCvQYjeufpuBF76tOVfynMZEzs"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "cashin",
+        "isPath": false
+      }
+    ],
     "tests": []
   }
 ]
