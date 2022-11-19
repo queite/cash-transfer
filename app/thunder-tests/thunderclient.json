@@ -1,0 +1,146 @@
+[
+  {
+    "_id": "d498126f-3315-48bc-adeb-e374755f9187",
+    "colId": "d0764702-7e76-4235-b657-3a2f95a1e973",
+    "containerId": "",
+    "name": "createUser",
+    "url": "localhost:3001/users/create",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-11-19T19:42:04.166Z",
+    "modified": "2022-11-19T19:42:40.677Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"username\": \"teste2\",\n  \"password\":\"123456Q8\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "82160c3d-21a9-4ecb-9ad5-f3d7d1e8e41b",
+    "colId": "d0764702-7e76-4235-b657-3a2f95a1e973",
+    "containerId": "",
+    "name": "getBalance",
+    "url": "localhost:3001/balance",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-11-19T19:43:16.295Z",
+    "modified": "2022-11-19T19:43:43.804Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0ZXN0ZTIiLCJhY2NvdW50SWQiOjMsImlhdCI6MTY2ODg4Njk2MCwiZXhwIjoxNjY4OTczMzYwfQ.TLGh7c9Sc7dK2zbffmdTVKxv3SEaxAzFRNqokY8mUTQ"
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "42a21663-b3d0-426e-89ef-4dcc8cbdfc0d",
+    "colId": "d0764702-7e76-4235-b657-3a2f95a1e973",
+    "containerId": "",
+    "name": "getLoggedUser",
+    "url": "localhost:3001/users/user",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-11-19T19:44:11.671Z",
+    "modified": "2022-11-19T19:44:33.967Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0ZXN0ZTIiLCJhY2NvdW50SWQiOjMsImlhdCI6MTY2ODg4Njk2MCwiZXhwIjoxNjY4OTczMzYwfQ.TLGh7c9Sc7dK2zbffmdTVKxv3SEaxAzFRNqokY8mUTQ"
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "5e9b689e-bcfa-4326-a4bd-79a2ecdf00ef",
+    "colId": "d0764702-7e76-4235-b657-3a2f95a1e973",
+    "containerId": "",
+    "name": "createTransaction",
+    "url": "localhost:3001/transactions",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2022-11-19T19:44:56.532Z",
+    "modified": "2022-11-19T19:47:37.102Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0ZXN0ZTIiLCJhY2NvdW50SWQiOjMsImlhdCI6MTY2ODg4Njk2MCwiZXhwIjoxNjY4OTczMzYwfQ.TLGh7c9Sc7dK2zbffmdTVKxv3SEaxAzFRNqokY8mUTQ"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\r\n  \"username\": \"teste\",\r\n  \"value\": 2\r\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ed702090-2b67-42cc-83e9-2a2b61f5deed",
+    "colId": "d0764702-7e76-4235-b657-3a2f95a1e973",
+    "containerId": "",
+    "name": "login",
+    "url": "localhost:3001/users/login",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-11-19T19:48:27.849Z",
+    "modified": "2022-11-19T19:49:06.273Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"username\": \"teste2\",\n  \"password\":\"123456Q8\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "05af667c-d82c-4887-83fb-190a0d44506f",
+    "colId": "d0764702-7e76-4235-b657-3a2f95a1e973",
+    "containerId": "",
+    "name": "getTransactions",
+    "url": "localhost:3001/transactions",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2022-11-19T19:50:02.291Z",
+    "modified": "2022-11-19T19:50:24.599Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0ZXN0ZTIiLCJhY2NvdW50SWQiOjMsImlhdCI6MTY2ODg4Njk2MCwiZXhwIjoxNjY4OTczMzYwfQ.TLGh7c9Sc7dK2zbffmdTVKxv3SEaxAzFRNqokY8mUTQ"
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "2a26c8fa-58c0-4c09-b33c-2e3a47dd31b1",
+    "colId": "d0764702-7e76-4235-b657-3a2f95a1e973",
+    "containerId": "",
+    "name": "search",
+    "url": "localhost:3001/transactions/search?q=2022-11-19",
+    "method": "GET",
+    "sortNum": 70000,
+    "created": "2022-11-19T19:50:45.122Z",
+    "modified": "2022-11-19T19:52:30.027Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0ZXN0ZTIiLCJhY2NvdW50SWQiOjMsImlhdCI6MTY2ODg4Njk2MCwiZXhwIjoxNjY4OTczMzYwfQ.TLGh7c9Sc7dK2zbffmdTVKxv3SEaxAzFRNqokY8mUTQ"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "2022-11-19",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  }
+]
