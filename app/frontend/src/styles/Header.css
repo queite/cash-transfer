@@ -14,6 +14,10 @@ header {
   margin-bottom: 12px;
 }
 
+header svg {
+  color: #fff;
+}
+
 header span {
   align-self:flex-end;
   font-size: 1.2rem;
