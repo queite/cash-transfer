@@ -1,37 +1,59 @@
-# BANCO DE DADOS
-🛠️ **Tools:**
-* [PostegreSQL](https://www.postgresql.org/)
+# APP DE TRANSFERÊNCIAS 💰💵
 
-# BACKEND
+<details>
+  <summary> BANDO DE DADOS 📚 </summary>
+  <br>
 
-🛠️ **Tools:**
-* [TypeScript](https://www.typescriptlang.org/)
-* [JWT](https://jwt.io/)
-* [Sequelize](https://sequelize.org/)
-* [express-async-errors](https://www.npmjs.com/package/express-async-errors)
-* [zod](https://github.com/colinhacks/zod)
-* [ESLint](https://eslint.org/)
-* [bcrypt](https://www.npmjs.com/package/bcrypt)
+  🛠️ **Tools:**
+  * [PostegreSQL](https://www.postgresql.org/)
 
+  **Informações do banco:** <br>
+  Nome = transfer | Porta = 5432 | Usuário = postgres |  Password = example <br>
+  Acesso via docker: `docker exec -it postgres-db psql -U postgres `
+</details>
+  <br>
+
+<details>
+  <summary> BACKEND 💻</summary>
+  <br>
+
+  🛠️ **Tools:**
+  * [TypeScript](https://www.typescriptlang.org/)
+  * [JWT](https://jwt.io/)
+  * [Sequelize](https://sequelize.org/)
+  * [express-async-errors](https://www.npmjs.com/package/express-async-errors)
+  * [zod](https://github.com/colinhacks/zod)
+  * [ESLint](https://eslint.org/)
+  * [bcrypt](https://www.npmjs.com/package/bcrypt)
+
+  <br>
+
+  ### ✨**Rotas**
+  | Recurso | Rota
+  | ------- | ------
+  Lista transações | GET /transactions
+  Obter dados conta |GET /balance
+  Obtem dados do usuário logado | GET /users/user
+  Filtra transações por data ou tipo | GET /transactions/search
+  Cria nova transação | POST /transactions
+  Cria usuário | POST /users/create
+  Login | POST /users/login
+</details>
 <br>
 
-## ✨**Rotas**
-| Recurso | Rota
-| ------- | ------
-Lista transações | GET /transactions
-Obter dados conta |GET /balance
-Obtem dados do usuário logado | GET /users/user
-Filtra transações por data ou tipo | GET /transactions/search
-Cria nova transação | POST /transactions
-Cria usuário | POST /users/create
-Login | POST /users/login
 
-# FRONTEND
-* [React](https://github.com/colinhacks/zod)
-* [TypeScript](https://www.typescriptlang.org/)
-* [Axios](https://axios-http.com/ptbr/docs/intro)
+<details>
+  <summary> FRONTEND 🖥️</summary>
+  <br>
 
-### 🎯
+  🛠️ **Tools:**
+  * [React](https://github.com/colinhacks/zod)
+  * [TypeScript](https://www.typescriptlang.org/)
+  * [Axios](https://axios-http.com/ptbr/docs/intro)
+</details>
+<br>
+
+<!-- ### 🎯
 # TESTES
 
 🛠️ **Tools:**
@@ -41,38 +63,24 @@ Login | POST /users/login
 <!-- * [Swagger](https://swagger.io/) -->
 <br>
 
----
+## ⚙️Como rodar a aplicação:
 
-
- ## ⚙️Como rodar a aplicação:
-
-<details>
-
-<summary> Install and execute </summary> <br>
-
-Download the code:
+Descompacte a pasta com o comando:
 ```
-git clone git@github.com:queite/trybe-futebol-clube.git
+unzip app.zip
 ```
-Enter the root folder:
+Entre na pasta raiz:
 ```
-cd trybe-futebol-clube
+cd app
 ```
-Install dependencies:
+Rode o seguinte comando docker:
 ```
-npm install
+docker-compose up -d –build
 ```
-Run on docker:
-```
-npm run compose:up
-```
-
-Go to the `localhost:3000` to see from the frontend or use the routes on Thunder Client to see the back-end. <br>
-Ex.: `localhost:3001/leaderboard` <br>
-
-</details>
+Vá ao `localhost:3000` para ver o frontend ou use as rotas no Thunder Client para ver o back-end. <br>
 <br>
-<details>
+
+<!-- <details>
 
 <summary>Run the tests </summary> <br>
 
@@ -88,4 +96,4 @@ Run the tests
 ```
 npm run test:coverage
 ```
-</details>
+</details> -->
