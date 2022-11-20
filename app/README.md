@@ -1,7 +1,7 @@
 # APP DE TRANSFERÊNCIAS 💰💵
 
 <details>
-  <summary> BANDO DE DADOS 📚 </summary>
+  <summary> <font color="#05d401">BANDO DE DADOS</font> 📚 </summary>
   <br>
 
   🛠️ **Tools:**
@@ -14,7 +14,7 @@
   <br>
 
 <details>
-  <summary> BACKEND 💻</summary>
+  <summary> <font color="#ff00ff">BACKEND</font> 💻</summary>
   <br>
 
   🛠️ **Tools:**
@@ -43,7 +43,7 @@
 
 
 <details>
-  <summary> FRONTEND 🖥️</summary>
+  <summary> <font color="#05d401">FRONTEND</font> 🖥️</summary>
   <br>
 
   🛠️ **Tools:**
@@ -53,17 +53,24 @@
 </details>
 <br>
 
-<!-- ### 🎯
-# TESTES
+<details>
+  <summary> <font color="#ff00ff">TESTES</font> ⚗️ </summary>
+  <br>
 
-🛠️ **Tools:**
-* [Chai](https://www.chaijs.com/)
-* [Sinon](https://sinonjs.org/)
-* [Mocha](https://mochajs.org/)
-<!-- * [Swagger](https://swagger.io/) -->
-<br>
+  🛠️ **Tools:**
+  * [Chai](https://www.chaijs.com/)
+  * [Chai HTTP](https://www.chaijs.com/plugins/chai-http/)
+  * [Sinon](https://sinonjs.org/)
+  * [Mocha](https://mochajs.org/)
 
+  Foram realizados **testes de integração** para o backend. <br>
+  Para rodar os testes pelo `docker` use o comando `docker exec -it app_backend sh -c "npm test" `
+</details>
+  <br>
+
+---
 ## ⚙️Como rodar a aplicação:
+<br>
 
 Descompacte a pasta com o comando:
 ```
@@ -78,22 +85,3 @@ Rode o seguinte comando docker:
 docker-compose up -d –build
 ```
 Vá ao `localhost:3000` para ver o frontend ou use as rotas no Thunder Client para ver o back-end. <br>
-<br>
-
-<!-- <details>
-
-<summary>Run the tests </summary> <br>
-
-Enter the backend folder:
-```
-cd ./app/backend/
-```
-Install dependencies:
-```
-npm install
-```
-Run the tests
-```
-npm run test:coverage
-```
-</details> -->
