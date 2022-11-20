@@ -5,12 +5,5 @@
     "created": "2022-11-19T19:41:58.179Z",
     "sortNum": 10000,
     "folders": []
-  },
-  {
-    "_id": "7a1fa4a2-17d6-4eba-a4bb-af593633b9b1",
-    "colName": "getTransactions",
-    "created": "2022-11-19T19:49:50.118Z",
-    "sortNum": 20000,
-    "folders": []
   }
 ]
