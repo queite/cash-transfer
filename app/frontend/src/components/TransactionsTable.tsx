@@ -38,4 +38,4 @@ function TransactionsTable() {
   )
 }
 
-export default TransactionsTable
+export default TransactionsTable;

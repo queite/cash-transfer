@@ -5,10 +5,7 @@ function App() {
   return (
       <div className="App">
         <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>
-          Bem-vindo a N.G Cash
-          </p>
+          <p>Bem-vindo a N.G Cash</p>
         </header>
         <div className='home-container'>
           <div className='access-container'>
@@ -24,6 +21,6 @@ function App() {
       </div>
 
   );
-}
+};
 
 export default App;

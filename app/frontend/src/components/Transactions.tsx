@@ -9,8 +9,8 @@ function Transactions() {
 
   const handleDataFilter = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const filteredTransactions = await api.get(`/transactions/search?q=${e.target.value}`, {'headers': {'Authorization': localStorage.token}});
-    setTransactions(filteredTransactions.data)
-  }
+    setTransactions(filteredTransactions.data);
+  };
 
   return(
     <div className="transction-container">
@@ -50,4 +50,4 @@ function Transactions() {
   )
 }
 
-export default Transactions
+export default Transactions;

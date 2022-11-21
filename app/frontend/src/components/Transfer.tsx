@@ -14,19 +14,19 @@ function Transfer() {
     localStorage.balance = JSON.stringify(updatedBalance.data);
     setTransactions(updatedTransactions.data);
     localStorage.transactions = JSON.stringify(updatedTransactions.data);
-  }
+  };
 
   const handleTransfer = async () => {
     try {
       await api.post('/transactions', {
         username: dataTransfer.username,
         value: dataTransfer.value
-      }, {'headers': {'Authorization': localStorage.token}})
+      }, {'headers': {'Authorization': localStorage.token}});
       await updateData();
     } catch (error) {
-        alert(error)
+        alert(error);
       }
-  }
+  };
 
   return(
     <div className="transfer-container">
@@ -53,6 +53,6 @@ function Transfer() {
       <button onClick={handleTransfer}>Transferir</button>
     </div>
   )
-}
+};
 
 export default Transfer;

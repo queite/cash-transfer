@@ -7,33 +7,33 @@ import '../styles/Login.css';
 
 interface LoginProps {
   login?: boolean
-}
+};
 
 interface ILogin {
   username: string
   password: string
-}
+};
 
 function Login(props: LoginProps) {
   const [login, setLogin] = useState<ILogin>({username: '', password: ''});
   const navigate = useNavigate();
-  const {setToken, setUserData, setTransactions, setBalance}: any = useContext(Context)
+  const {setToken, setUserData, setTransactions, setBalance}: any = useContext(Context);
 
   const geUserInfo = async () => {
     const userData = await api.get('/users/user', {'headers': {
         'Authorization': localStorage.token
-      }})
+      }});
     setUserData(userData.data)
     localStorage.user = JSON.stringify(userData.data);
     const userTransactions = await api.get('/transactions', {'headers': {
         'Authorization': localStorage.token
-      }})
+      }});
     setTransactions(userTransactions.data);
     localStorage.transactions = JSON.stringify(userTransactions.data);
     const balance = await api.get('/balance', {'headers': {
         'Authorization': localStorage.token
-      }})
-    setBalance(balance.data)
+      }});
+    setBalance(balance.data);
     localStorage.balance = JSON.stringify(balance.data);
   }
 
@@ -45,8 +45,8 @@ function Login(props: LoginProps) {
       token = await api.post('/users/create', {username: login.username, password: login.password } );
     }
     if(token) {
-      localStorage.token = token.data.token
-      setToken(token.data.token)
+      localStorage.token = token.data.token;
+      setToken(token.data.token);
       geUserInfo();
       navigate('/main');
     }

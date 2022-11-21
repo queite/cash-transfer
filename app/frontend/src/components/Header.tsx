@@ -13,7 +13,7 @@ function Header() {
     setUserData();
     setBalance();
     setTransactions([]);
-    navigate('/')
+    navigate('/');
   }
 
   return(

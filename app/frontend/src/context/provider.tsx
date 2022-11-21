@@ -7,10 +7,10 @@ type Props = {
 };
 
 const Provider = ({children}: Props) => {
-  const [userData, setUserData] = useState<IUserData>()
-  const [token, setToken] = useState<string>()
-  const [transactions, setTransactions] = useState<ITransactions[]>([])
-  const [balance, setBalance] = useState<IBalance>()
+  const [userData, setUserData] = useState<IUserData>();
+  const [token, setToken] = useState<string>();
+  const [transactions, setTransactions] = useState<ITransactions[]>([]);
+  const [balance, setBalance] = useState<IBalance>();
 
 useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
@@ -32,13 +32,13 @@ useEffect(() => {
     setBalance,
     transactions,
     setTransactions,
-  }
+  };
 
   return(
     <Context.Provider value={data}>
       {children}
     </Context.Provider>
   )
-}
+};
 
-export default Provider
+export default Provider;
