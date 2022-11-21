@@ -1,7 +1,7 @@
 {
   "main": "./build/server",
   "scripts": {
-    "db:reset": "npx -y tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "db:reset": "npx -y tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "start": "ts-node --files src/server.ts",
     "dev": "nodemon --watch \"./src/**\" ./src/server.ts",
     "lint": "eslint ./src --ext .ts",

@@ -8,8 +8,17 @@
   * [PostegreSQL](https://www.postgresql.org/)
 
   **Informações do banco:** <br>
+
   Nome = transfer | Porta = 5432 | Usuário = postgres |  Password = example <br>
   Acesso via docker: `docker exec -it postgres-db psql -U postgres `
+  <br>
+
+  **📨 Usuários previamente cadastrados — seeders:**<br>
+  id| username | password | accountId
+  --|----------|----------|-----------
+  1 | Enzo     | 123456S8 |    1
+  2 | Ana      | 123456S8 |    2
+
 </details>
   <br>
 

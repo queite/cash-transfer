@@ -4,7 +4,7 @@ import httpException from '../errors/httpException';
 
 const errorMiddleware = (
   err: Error | ZodError,
-  req: Request,
+  _req: Request,
   res: Response,
   _next: NextFunction,
 ) => {
@@ -14,5 +14,5 @@ const errorMiddleware = (
   const { status, message } = err as httpException;
   res.status(status || 500).json({ message });
 };
-// { message: err.issues[0].message }
+
 export default errorMiddleware;

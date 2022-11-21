@@ -3,9 +3,8 @@ import HttpException from '../errors/httpException';
 import JwtService from '../services/JwtService';
 
 const authnMiddleware = (
-  // _err: Error,
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction,
 ) => {
   const { authorization } = req.headers;

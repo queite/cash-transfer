@@ -7,13 +7,13 @@ type createdTransaction = {
     creditedAccountId: number
     value: number
     createdAt: string
-  }
-}
+  };
+};
 
 type dataNeededToTransfer = {
   username: string
   value: number
-}
+};
 
 const createdTransactionMock: createdTransaction = {
   dataValues: {
@@ -21,14 +21,14 @@ const createdTransactionMock: createdTransaction = {
     debitedAccountId: 1,
     creditedAccountId: 3,
     value: 20,
-    createdAt: '2022-11-19T19:47:38.293Z'
-  }
-}
+    createdAt: '2022-11-19T19:47:38.293Z',
+  },
+};
 
 const dataNeededToTransferMock: dataNeededToTransfer = {
   username: 'Jane',
-  value: 20
-}
+  value: 20,
+};
 
 const returnOfTransferValidation: ITransferData= {
   debitedAccountId: 1,
@@ -36,7 +36,7 @@ const returnOfTransferValidation: ITransferData= {
   creditedAccountId: 3,
   newCreditedAccountBalance: 120,
   value: 20,
-}
+};
 
 
 export {
