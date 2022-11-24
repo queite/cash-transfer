@@ -1,7 +1,7 @@
 # APP DE TRANSFERÊNCIAS 💰💵
 
 <details>
-  <summary> <font color="#05d401">BANDO DE DADOS</font> 📚 </summary>
+  <summary> BANDO DE DADOS 📚 </summary>
   <br>
 
   🛠️ **Tools:**
@@ -23,7 +23,7 @@
   <br>
 
 <details>
-  <summary> <font color="#ff00ff">BACKEND</font> 💻</summary>
+  <summary> BACKEND 💻</summary>
   <br>
 
   🛠️ **Tools:**
@@ -52,7 +52,7 @@
 
 
 <details>
-  <summary> <font color="#05d401">FRONTEND</font> 🖥️</summary>
+  <summary> FRONTEND 🖥️</summary>
   <br>
 
   🛠️ **Tools:**
@@ -63,7 +63,7 @@
 <br>
 
 <details>
-  <summary> <font color="#ff00ff">TESTES</font> ⚗️ </summary>
+  <summary> TESTES ⚗️ </summary>
   <br>
 
   🛠️ **Tools:**
@@ -81,10 +81,6 @@
 ## ⚙️Como rodar a aplicação:
 <br>
 
-Descompacte a pasta com o comando:
-```
-unzip app.zip
-```
 Entre na pasta raiz:
 ```
 cd app
