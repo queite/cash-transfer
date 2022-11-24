@@ -30,7 +30,7 @@ const dataNeededToTransferMock: dataNeededToTransfer = {
   value: 20,
 };
 
-const returnOfTransferValidation: ITransferData= {
+const returnOfTransactionValidation: ITransferData= {
   debitedAccountId: 1,
   newDebitedAccountBalance: 80,
   creditedAccountId: 3,
@@ -42,5 +42,5 @@ const returnOfTransferValidation: ITransferData= {
 export {
   createdTransactionMock,
   dataNeededToTransferMock,
-  returnOfTransferValidation
+  returnOfTransactionValidation
 };

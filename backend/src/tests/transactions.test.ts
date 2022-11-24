@@ -2,12 +2,13 @@ import chai from 'chai';
 import sinon from 'sinon';
 import app from '../app';
 import Account from '../database/models/Account';
+import sequelize from '../database/models/index';
 import Transaction from '../database/models/Transaction';
 import BalanceService from '../services/BalanceService';
 import JwtService from '../services/JwtService';
 import TransactionService from '../services/TransactionService';
 import UserService from '../services/UserService';
-import { createdTransactionMock, dataNeededToTransferMock, returnOfTransferValidation } from './mocks/transactionMocks';
+import { createdTransactionMock, dataNeededToTransferMock, returnOfTransactionValidation } from './mocks/transactionMocks';
 import { userDataMock } from './mocks/userMocks';
 // @ts-ignore
 import chaiHttp = require('chai-http');
@@ -26,9 +27,10 @@ describe('/transactions', () => {
   });
 
   it('should return status 201 in case of succes', async () => {
-    sinon.stub(TransactionService, 'validateTransfer').resolves(returnOfTransferValidation);
+    sinon.stub(TransactionService, 'validateTransaction').resolves(returnOfTransactionValidation);
     sinon.stub(Account, 'update').resolves([1]);
     sinon.stub(Transaction, 'create').resolves(createdTransactionMock as Transaction);
+    sinon.stub(sequelize, 'transaction').resolves();
 
     const response = await chai.request(app)
       .post('/transactions')

@@ -3,6 +3,7 @@ import chai from 'chai';
 import sinon from 'sinon';
 import app from '../app';
 import Account from '../database/models/Account';
+import sequelize from '../database/models/index';
 import User from '../database/models/User';
 import JwtService from '../services/JwtService';
 import accountMock from './mocks/accountMocks';
@@ -52,6 +53,7 @@ describe('/users/create', () => {
 
   it('should return a token in case of success', async () => {
     sinon.stub(User, 'findOne').resolves(null);
+    sinon.stub(sequelize, 'transaction').resolves();
     sinon.stub(User, 'create').resolves(userMock as User);
     sinon.stub(Account, 'create').resolves(accountMock as Account);
 
@@ -79,7 +81,6 @@ describe('/users/user', () => {
     sinon.stub(JwtService,  'verify').returns(userDataMock)
 
     const response = await chai.request(app).get('/users/user').set({ "Authorization": `token` });
-    console.log(response.body);
     expect(response.status).to.be.eq(200);
     expect(response.body).to.be.deep.eq(userDataMock);
   });
