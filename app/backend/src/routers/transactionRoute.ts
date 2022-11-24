@@ -7,7 +7,7 @@ const router = Router();
 
 const transactionController = new TransactionController(TransactionService);
 
-router.post('/', authnMiddleware, (req, res) => transactionController.transfer(req, res));
+router.post('/', authnMiddleware, (req, res) => transactionController.createTransaction(req, res));
 router.get('/', authnMiddleware, (req, res) => transactionController.getTransactions(req, res));
 router.get('/search', authnMiddleware, (req, res) => transactionController.search(req, res));
 

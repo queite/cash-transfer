@@ -8,7 +8,7 @@ import BalanceService from './BalanceService';
 import UserService from './UserService';
 
 export default class TransactionService {
-  static async validateTransfer(transactionData: ITransactionData): Promise<ITransferData> {
+  static async validateTransaction(transactionData: ITransactionData): Promise<ITransferData> {
     const { debitedUserId, creditedUsername, value } = transactionData;
     const creditedUser = await UserService.getUserData(creditedUsername);
     const creditedAccount = await BalanceService.getBalance(creditedUser.accountId);
@@ -31,8 +31,8 @@ export default class TransactionService {
     };
   }
 
-  static async transfer(transactionData: ITransactionData): Promise<void> {
-    const transferData = await this.validateTransfer(transactionData);
+  static async createTransaction(transactionData: ITransactionData): Promise<void> {
+    const transferData = await this.validateTransaction(transactionData);
     const { debitedAccountId, creditedAccountId, value } = transferData;
 
     await sequelize.transaction(async (t) => {

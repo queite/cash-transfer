@@ -8,14 +8,14 @@ const unauthorizedUser = 'Unauthorized user';
 export default class TransactionController {
   constructor(private transactionService: ITransactionService) {}
 
-  async transfer(req: Request, res: Response) {
+  async createTransaction(req: Request, res: Response) {
     if (!req.user) throw new HttpException(401, unauthorizedUser);
     const transactionData = {
       debitedUserId: req.user.id,
       creditedUsername: req.body.username,
       value: req.body.value,
     };
-    await this.transactionService.transfer(transactionData);
+    await this.transactionService.createTransaction(transactionData);
     return res.status(201).send();
   }
 
