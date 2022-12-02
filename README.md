@@ -81,9 +81,13 @@
 ## ⚙️Como rodar a aplicação:
 <br>
 
+Clone o repositório:
+```
+git clone git@github.com:queite/cash-transfer.git
+```
 Entre na pasta raiz:
 ```
-cd app
+cd cash-transfer
 ```
 Rode o seguinte comando docker:
 ```
